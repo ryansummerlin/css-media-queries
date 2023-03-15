@@ -84,14 +84,65 @@ header {
 
 /* ----- Phase 1 - Moderate Screen ----- */
 
-/* Your code here */
+@media screen and (min-width: 820px) {
+    .content {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 /* ----- Phase 1 - Wide Screen ----- */
+@media screen and (min-width: 1220px) {
+    .image-box {
+        position: inline;
+        grid-area: right;
+    }
 
-/* Your code here */
+    .page {
+        display: grid;
+        grid-template-columns: 1400px auto;
+        grid-template-areas: "left right";
+    }
+}
 
 /* ===== PRINTING ===== */
 
-/* Phase 2 */
+@media print and (orientation: landscape) {
+    .sidebar, header {
+        display: none;
+    }
 
-/* Your code here */
+    body, .story-box {
+        background-color: blue;
+    }
+
+    .story-box {
+        filter: none;
+        border-radius: 0;
+    }
+}
+
+@media print and (orientation: landscape) {
+    .image-box {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media print and (orientation: portrait) {
+    .image-box {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 100px;
+        height: 100px;
+    }
+}
